@@ -1,0 +1,33 @@
+<div [ngClass]="{'show' : showModal}" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Doctor Log in</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="login-form">
+          <form [formGroup]="signInForm">
+            <div class="form-group">
+              <input type="text" formControlName="Username" class="form-control" placeholder="Username" required="required">
+            </div>
+            <div class="form-group">
+              <input type="password" formControlName="Password" class="form-control" placeholder="Password" required="required">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block" (click)="onSubmit()">Log in</button>
+            </div>
+            <div class="clearfix">
+              <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
+              <a href="#" class="pull-right">Forgot Password?</a>
+            </div>
+          </form>
+          <p class="text-center"><a href="#" (click)="openDoctorSignUpModal()">Create an Account</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

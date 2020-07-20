@@ -1,0 +1,29 @@
+<div class="bg">
+  <div class="row header">
+    <app-doctor-header></app-doctor-header>
+  </div>
+  <div class="row body">
+    <div class="col doctor-col" (click)="openModal()">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="assets/images/find-patient.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Help a Patient</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="assets/images/find-doctor.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Find a doctor</h5>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <app-doctor-footer></app-doctor-footer>
+    </div>
+  </div>
+  <app-doctor-login-modal [showModal]="showModal" (close)="closeModal()"
+    (showDoctorSignUpModal)="showDoctorSignUpModal()"></app-doctor-login-modal>
+  <app-doctor-signup-modal [showModal]="displayDoctorSignUpModal" (close)="closeDoctorSignUpModal()">
+  </app-doctor-signup-modal>

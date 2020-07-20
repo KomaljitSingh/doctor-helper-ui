@@ -1,0 +1,162 @@
+<div [ngClass]="{'show' : showModal}" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Doctor Sign Up</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="login-form">
+          <form [formGroup]="registerForm">
+            <div class="row">
+              <div class="col col-4">
+                <div class="form-group">
+                  <input type="text" formControlName="firstName" placeholder="First Name" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                  <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                    <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="lastName" placeholder="Last Name" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                  <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="email" placeholder="Email" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="date" formControlName="dob" placeholder="DOB" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
+                  <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+                    <div *ngIf="f.dob.errors.required">DOB is required</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="password" formControlName="password" placeholder="Password" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="password" formControlName="confirmPassword" placeholder="Confirm Password"
+                    class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                  <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                    <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                    <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col col-4">
+                <div class="form-group">
+                  <input type="tel" formControlName="mobile" placeholder="Mobile No." class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
+                  <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                    <div *ngIf="f.mobile.errors.required">Mobile No. is required</div>
+                    <div *ngIf="f.mobile.errors.pattern">Please, Enter 10 digit Mobile Number.</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="department" placeholder="Department" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.department.errors }" />
+                  <div *ngIf="submitted && f.department.errors" class="invalid-feedback">
+                    <div *ngIf="f.department.errors.required">Department is required</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="qualification" placeholder="Qualification" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.qualification.errors }" />
+                  <div *ngIf="submitted && f.qualification.errors" class="invalid-feedback">
+                    <div *ngIf="f.qualification.errors.required">Qualification is required</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="specialist" placeholder="Specialist" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.specialist.errors }" />
+                  <div *ngIf="submitted && f.specialist.errors" class="invalid-feedback">
+                    <div *ngIf="f.specialist.errors.required">specialist is required</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="number" formControlName="yearOfExperience" placeholder="Year Of Experience"
+                    class="form-control" [ngClass]="{ 'is-invalid': submitted && f.yearOfExperience.errors }" />
+                  <div *ngIf="submitted && f.yearOfExperience.errors" class="invalid-feedback">
+                    <div *ngIf="f.yearOfExperience.errors.required">yearOfExperience is required</div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col col-4">
+                <div class="form-group">
+                  <input type="text" formControlName="streetLine" placeholder="Street Line" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.streetLine.errors }" />
+                  <div *ngIf="submitted && f.streetLine.errors" class="invalid-feedback">
+                    <div *ngIf="f.streetLine.errors.required">street Line is required</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="city" placeholder="City" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
+                  <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                    <div *ngIf="f.city.errors.required">City is required</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="state" placeholder="State" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.state.errors }" />
+                  <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                    <div *ngIf="f.state.errors.required">State is required</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="pincode" placeholder="Pincode" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.pincode.errors }" />
+                  <div *ngIf="submitted && f.pincode.errors" class="invalid-feedback">
+                    <div *ngIf="f.pincode.errors.required">pincode is required</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="country" placeholder="Country" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.country.errors }" />
+                  <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">country is required</div>
+                  </div>
+                </div>
+                <div class="radio-buttons">
+                  <label class="col col-4">Gender</label>
+                  <div class="custom-control custom-radio col col-4">
+                    <input id="male" type="radio" class="custom-control-input" value="male" name="gender"
+                      formControlName="gender">
+                    <label class="custom-control-label" for="male">Male</label>
+                  </div>
+
+                  <div class="custom-control custom-radio col col-4">
+                    <input id="female" type="radio" class="custom-control-input" value="female" name="gender"
+                      formControlName="gender">
+                    <label class="custom-control-label" for="female">Female</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="btn-action">
+              <button class="btn btn-outline-primary mb-2 mr-2 " (click)="onSubmit()">Register</button>
+              <button class="btn btn-outline-primary mb-2 mr-2" (click)="closeModal()">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

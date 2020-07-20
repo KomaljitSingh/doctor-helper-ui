@@ -1,0 +1,40 @@
+.body {
+    margin: 5rem 0 5rem 0;
+}
+
+.header {
+    background-color: #e3f2fd;
+    padding-left: 2.25rem;
+}
+
+.doctor-col {
+    margin-left: 10rem;
+}
+
+.card:hover {
+    border-color: #007bff;
+}
+
+h5 {
+    text-align: center;
+}
+
+body.modal-open .bg {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+}
+
+// .blur {
+//     -webkit-filter: blur(5px) grayscale(90%);
+// }
+
+.dark-modal .modal-content {
+    background-color: #292b2c;
+    color: white;
+  }
+  .dark-modal .close {
+    color: white;
+  }
+  .light-blue-backdrop {
+    background-color: #5cb3fd;
+  }
